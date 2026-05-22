@@ -1,1 +1,630 @@
 
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE: index.html
+  PURPOSE: Main homepage of the House Cleaning Service website.
+  SECTIONS:
+    1. <head>      — Meta tags, fonts, CSS link
+    2. <nav>       — Sticky navigation bar
+    3. #hero       — Fullscreen video background + CTA buttons
+    4. #services   — Service cards (4 cards)
+    5. #showcase   — Video showcase with autoplay muted clips
+    6. #why-us     — Trust-building stats/features
+    7. #contact    — Booking / contact form
+    8. <footer>    — Company info, social links, copyright
+    9. <script>    — JS file link + inline scroll-spy
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <!-- ── Meta & SEO ── -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium professional home and office cleaning services. Book a cleaning today and experience spotless results." />
+  <meta name="keywords" content="house cleaning, home cleaning service, deep cleaning, move-in cleaning, office cleaning" />
+  <title>SparkleHome | Professional Cleaning Services</title>
+
+  <!-- ── Favicon (use your own logo.png in /images/) ── -->
+  <link rel="icon" href="images/logo.png" type="image/png" />
+
+  <!-- ── Google Fonts: Playfair Display (display) + DM Sans (body) ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ── Font Awesome (icons for nav, footer, why-us) ── -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ── Main Stylesheet ── -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+    SECTION 1: NAVIGATION BAR
+    - Logo on the left
+    - Nav links in the center/right
+    - "Book Now" CTA button
+    - Hamburger menu for mobile
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+        <!-- Replace src with your actual logo image -->
+        <span class="logo-icon"><i class="fas fa-broom"></i></span>
+        <span class="logo-text">Sparkle<strong>Home</strong></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero"     class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#showcase" class="nav-link">Our Work</a></li>
+        <li><a href="#why-us"   class="nav-link">Why Us</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Book Now CTA in Navbar -->
+      <a href="#contact" class="btn btn-nav">Book Now</a>
+
+      <!-- Hamburger Icon (mobile only) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div><!-- /.nav-container -->
+  </nav><!-- /.navbar -->
+
+
+  <!-- ============================================================
+    SECTION 2: HERO — Fullscreen Video Background
+    - Autoplay muted looping video background
+    - Dark overlay for readability
+    - Main heading, sub-heading, and two CTA buttons
+    - Scroll indicator arrow at the bottom
+  ============================================================ -->
+  <section id="hero" class="hero">
+
+    <!-- Video Background -->
+    <!-- Replace "videos/cleaning-home.mp4" with your actual video file -->
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="images/cleaner1.jpg"
+    >
+      <source src="videos/cleaning-home.mp4" type="video/mp4" />
+      <!-- Fallback if browser does not support video -->
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark Overlay on top of video -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <p class="hero-tagline">Trusted · Reliable · Professional</p>
+      <h1 class="hero-title">
+        Professional <br />
+        <span class="hero-title-accent">Home Cleaning</span><br />
+        Services
+      </h1>
+      <p class="hero-subtitle">
+        We bring the sparkle back to your home. Fully insured, background-checked cleaners — ready to serve you today.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-btns">
+        <a href="#contact"  class="btn btn-primary">
+          <i class="fas fa-calendar-check"></i> Book a Cleaning
+        </a>
+        <a href="#services" class="btn btn-outline">
+          <i class="fas fa-list"></i> View Services
+        </a>
+      </div>
+    </div><!-- /.hero-content -->
+
+    <!-- Animated Scroll Indicator -->
+    <a href="#services" class="scroll-indicator" aria-label="Scroll to services">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+
+  </section><!-- /#hero -->
+
+
+  <!-- ============================================================
+    SECTION 3: SERVICES
+    - 4 service cards in a responsive grid
+    - Each card: image/icon, title, description, price, CTA link
+    - Cards animate in with fade-slide-up on scroll
+  ============================================================ -->
+  <section id="services" class="services section-padding">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header animate-on-scroll">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Our Cleaning <span>Services</span></h2>
+        <p class="section-desc">
+          From quick tidying to full deep cleans — we have a service tailored to every home and budget.
+        </p>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="services-grid">
+
+        <!-- ── Card 1: Home Cleaning ── -->
+        <div class="service-card animate-on-scroll" data-delay="0">
+          <!-- Replace src with your own image: images/home-cleaning.jpg -->
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Home Cleaning Service" loading="lazy" />
+            <div class="card-image-overlay">
+              <i class="fas fa-home"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag">Most Popular</div>
+            <h3 class="card-title">Home Cleaning</h3>
+            <p class="card-desc">
+              Regular scheduled cleaning for your living spaces — dusting, vacuuming, mopping, and sanitising every room.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">From <strong>$79</strong></span>
+              <a href="#contact" class="card-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div><!-- /.service-card -->
+
+        <!-- ── Card 2: Office Cleaning ── -->
+        <div class="service-card animate-on-scroll" data-delay="100">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Office Cleaning Service" loading="lazy" />
+            <div class="card-image-overlay">
+              <i class="fas fa-briefcase"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Office Cleaning</h3>
+            <p class="card-desc">
+              Keep your workspace spotless and hygienic. We clean desks, kitchens, restrooms, and common areas — on your schedule.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">From <strong>$120</strong></span>
+              <a href="#contact" class="card-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div><!-- /.service-card -->
+
+        <!-- ── Card 3: Deep Cleaning ── -->
+        <div class="service-card animate-on-scroll" data-delay="200">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Deep Cleaning Service" loading="lazy" />
+            <div class="card-image-overlay">
+              <i class="fas fa-spray-can-sparkles"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tag card-tag-gold">Thorough</div>
+            <h3 class="card-title">Deep Cleaning</h3>
+            <p class="card-desc">
+              A comprehensive top-to-bottom clean — inside appliances, behind furniture, grout scrubbing, and everything in between.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">From <strong>$149</strong></span>
+              <a href="#contact" class="card-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div><!-- /.service-card -->
+
+        <!-- ── Card 4: Move-In / Move-Out Cleaning ── -->
+        <div class="service-card animate-on-scroll" data-delay="300">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Move-In Move-Out Cleaning" loading="lazy" />
+            <div class="card-image-overlay">
+              <i class="fas fa-truck-moving"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Move-In / Move-Out</h3>
+            <p class="card-desc">
+              Perfect for landlords and tenants. We leave the property in pristine condition — ready for the next chapter.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">From <strong>$199</strong></span>
+              <a href="#contact" class="card-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div><!-- /.service-card -->
+
+      </div><!-- /.services-grid -->
+    </div><!-- /.container -->
+  </section><!-- /#services -->
+
+
+  <!-- ============================================================
+    SECTION 4: VIDEO SHOWCASE
+    - Grid of autoplay, muted, looping video clips
+    - Each video has an overlay label
+    - Fade-in animation on scroll
+  ============================================================ -->
+  <section id="showcase" class="showcase section-padding">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header animate-on-scroll">
+        <p class="section-label">See Us In Action</p>
+        <h2 class="section-title">Cleaning That <span>Speaks</span> for Itself</h2>
+        <p class="section-desc">
+          Watch our professional team transform homes — one room at a time.
+        </p>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="showcase-grid">
+
+        <!-- ── Video 1: Kitchen Cleaning (large card) ── -->
+        <div class="showcase-card showcase-card-large animate-on-scroll">
+          <!--
+            Replace src with: videos/kitchen-cleaning.mp4
+            poster is a thumbnail image shown before video loads
+          -->
+          <video autoplay muted loop playsinline poster="images/kitchen.jpg" class="showcase-video">
+            <source src="videos/kitchen-cleaning.mp4" type="video/mp4" />
+          </video>
+          <div class="showcase-overlay">
+            <i class="fas fa-utensils"></i>
+            <span>Kitchen Cleaning</span>
+          </div>
+        </div>
+
+        <!-- ── Video 2: Floor Mopping ── -->
+        <div class="showcase-card animate-on-scroll" data-delay="100">
+          <video autoplay muted loop playsinline poster="images/cleaner1.jpg" class="showcase-video">
+            <source src="videos/floor-mop.mp4" type="video/mp4" />
+          </video>
+          <div class="showcase-overlay">
+            <i class="fas fa-water"></i>
+            <span>Floor Mopping</span>
+          </div>
+        </div>
+
+        <!-- ── Video 3: Vacuuming ── -->
+        <div class="showcase-card animate-on-scroll" data-delay="150">
+          <!-- No video file? Use a poster image as fallback -->
+          <video autoplay muted loop playsinline poster="images/cleaner1.jpg" class="showcase-video">
+            <source src="videos/vacuuming.mp4" type="video/mp4" />
+          </video>
+          <div class="showcase-overlay">
+            <i class="fas fa-wind"></i>
+            <span>Vacuuming</span>
+          </div>
+        </div>
+
+        <!-- ── Video 4: Bathroom Cleaning ── -->
+        <div class="showcase-card animate-on-scroll" data-delay="200">
+          <video autoplay muted loop playsinline poster="images/bathroom.jpg" class="showcase-video">
+            <source src="videos/bathroom-cleaning.mp4" type="video/mp4" />
+          </video>
+          <div class="showcase-overlay">
+            <i class="fas fa-bath"></i>
+            <span>Bathroom Cleaning</span>
+          </div>
+        </div>
+
+      </div><!-- /.showcase-grid -->
+    </div><!-- /.container -->
+  </section><!-- /#showcase -->
+
+
+  <!-- ============================================================
+    SECTION 5: WHY CHOOSE US
+    - Stats bar (clients served, years, rating, guarantee)
+    - Feature rows with icons
+  ============================================================ -->
+  <section id="why-us" class="why-us section-padding">
+    <div class="container">
+
+      <!-- Stats Row -->
+      <div class="stats-row animate-on-scroll">
+        <div class="stat-item">
+          <span class="stat-number" data-target="2500">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">Homes Cleaned</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span><span class="stat-plus"></span>
+          <p class="stat-label">Years of Experience</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="98">0</span><span class="stat-plus">%</span>
+          <p class="stat-label">Client Satisfaction</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">Trained Professionals</p>
+        </div>
+      </div>
+
+      <!-- Features Section Header -->
+      <div class="section-header animate-on-scroll" style="margin-top: 80px;">
+        <p class="section-label">Our Promise</p>
+        <h2 class="section-title">Why Choose <span>SparkleHome</span>?</h2>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="features-grid">
+
+        <div class="feature-card animate-on-scroll" data-delay="0">
+          <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Fully Insured</h3>
+          <p>Every clean is covered by our comprehensive insurance policy. Your home is always protected.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" data-delay="100">
+          <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+          <h3>Background Checked</h3>
+          <p>All our cleaners go through rigorous background checks and professional training before entering your home.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" data-delay="200">
+          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Eco-Friendly Products</h3>
+          <p>We use non-toxic, biodegradable cleaning products that are safe for children, pets, and the environment.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" data-delay="300">
+          <div class="feature-icon"><i class="fas fa-clock"></i></div>
+          <h3>Always On Time</h3>
+          <p>We respect your schedule. Our team arrives on time, every time — or your next clean is on us.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" data-delay="400">
+          <div class="feature-icon"><i class="fas fa-rotate-left"></i></div>
+          <h3>Re-Clean Guarantee</h3>
+          <p>Not happy with the results? We will come back and re-clean any missed areas at absolutely no charge.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll" data-delay="500">
+          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <h3>5-Star Rated</h3>
+          <p>Hundreds of happy customers rate us 5 stars on Google, Yelp, and HomeAdvisor. See for yourself.</p>
+        </div>
+
+      </div><!-- /.features-grid -->
+    </div><!-- /.container -->
+  </section><!-- /#why-us -->
+
+
+  <!-- ============================================================
+    SECTION 6: CONTACT / BOOKING FORM
+    - Left column: contact info + map placeholder
+    - Right column: booking form
+  ============================================================ -->
+  <section id="contact" class="contact section-padding">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header animate-on-scroll">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Request a <span>Cleaning</span></h2>
+        <p class="section-desc">
+          Fill in the form and our team will reach out within 2 hours to confirm your booking.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+
+        <!-- ── Left: Contact Info ── -->
+        <div class="contact-info animate-on-scroll">
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Call Us</h4>
+              <p>+1 (800) 555-CLEAN</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email Us</h4>
+              <p>hello@sparklehome.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Mon – Sat: 7:00 AM – 8:00 PM</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <h4>Service Area</h4>
+              <p>Greater Metro Area + Suburbs</p>
+            </div>
+          </div>
+
+          <!-- Trust Badge Strip -->
+          <div class="trust-badges">
+            <div class="badge"><i class="fas fa-award"></i> Certified</div>
+            <div class="badge"><i class="fas fa-shield-halved"></i> Insured</div>
+            <div class="badge"><i class="fas fa-star"></i> 5-Star</div>
+          </div>
+
+        </div><!-- /.contact-info -->
+
+        <!-- ── Right: Booking Form ── -->
+        <form class="contact-form animate-on-scroll" id="contactForm" novalidate>
+
+          <!-- Row 1: Name + Email -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+            </div>
+          </div>
+
+          <!-- Row 2: Phone + Service Type -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service" name="service">
+                <option value="">— Select a service —</option>
+                <option value="home">Home Cleaning</option>
+                <option value="office">Office Cleaning</option>
+                <option value="deep">Deep Cleaning</option>
+                <option value="move">Move-In / Move-Out</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Preferred Date -->
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" />
+          </div>
+
+          <!-- Row 4: Message -->
+          <div class="form-group">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your home, any special requirements, or questions..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Request Cleaning
+          </button>
+
+          <!-- Success / Error Message (shown via JS) -->
+          <div class="form-message" id="formMessage"></div>
+
+        </form><!-- /#contactForm -->
+
+      </div><!-- /.contact-wrapper -->
+    </div><!-- /.container -->
+  </section><!-- /#contact -->
+
+
+  <!-- ============================================================
+    FOOTER
+    - Logo + tagline
+    - Quick links
+    - Services links
+    - Social media icons
+    - Copyright bar
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Col 1: Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo">
+              <span class="logo-icon"><i class="fas fa-broom"></i></span>
+              <span class="logo-text">Sparkle<strong>Home</strong></span>
+            </a>
+            <p class="footer-tagline">
+              Bringing professional cleaning excellence to your doorstep since 2016.
+            </p>
+            <!-- Social Media Icons -->
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div><!-- /.footer-brand -->
+
+          <!-- Col 2: Quick Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#showcase">Our Work</a></li>
+              <li><a href="#why-us">Why Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Our Services -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Home Cleaning</a></li>
+              <li><a href="#services">Office Cleaning</a></li>
+              <li><a href="#services">Deep Cleaning</a></li>
+              <li><a href="#services">Move-In / Move-Out</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact Info -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Contact</h4>
+            <ul class="footer-links footer-contact">
+              <li><i class="fas fa-phone"></i> +1 (800) 555-CLEAN</li>
+              <li><i class="fas fa-envelope"></i> hello@sparklehome.com</li>
+              <li><i class="fas fa-clock"></i> Mon–Sat: 7AM – 8PM</li>
+            </ul>
+          </div>
+
+        </div><!-- /.footer-grid -->
+      </div><!-- /.container -->
+    </div><!-- /.footer-main -->
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="currentYear"></span> SparkleHome Cleaning Services. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div><!-- /.footer-bottom -->
+
+  </footer><!-- /.footer -->
+
+
+  <!-- ── Back to Top Button ── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ── Main JavaScript File ── -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
